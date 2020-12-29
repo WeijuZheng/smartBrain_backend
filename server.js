@@ -35,6 +35,8 @@ app.post('/register', register.handleRegister(database, bcrypt));
 app.put('/image', image.handleImage(database));
 app.post('/imageurl', image.handleApiCall);
 
-app.listen(3000, () => {
-    console.log('SERVING ON PORT 3000');
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+    console.log(`SERVING ON PORT ${port}`);
 })
